@@ -103,7 +103,7 @@ select opt in "${options[@]}" ; do
 	splash
 	echo " "
 	echo "Close the popup terminal window to continue..."
-	xterm -hold -e hydra $tmserver smtp -l $temail -p '$wordlist' -s $tport -S -v -V
+	xterm -hold -e hydra $tmserver smtp -l $temail -p $wordlist -s $tport -S -v -V
 	break
 	;;
 
