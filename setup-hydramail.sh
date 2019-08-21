@@ -51,12 +51,25 @@ credits(){
 }
 
 #===========================================#
+#         CHECKING FOR REQUIREMENTS         #
+#===========================================#
+
+PKG_OK=$(dpkg-query -W --showformat='${Status}\n' hydra | grep "install ok installed")
+echo Checking for hydra: $PKG_OK
+if [ "" == "$PKG_OK" ]; then
+  echo "hydra not installed. Attempting to install hydra now..."
+  sleep 0.15
+  apt-get install hydra
+fi
+
+#===========================================#
 #     SET PERMISSIONS & COPY FOR GLOBAL     #
 #===========================================#
 
 clear
 splash
 echo " "
+echo "Setting permissions for application and making global"
 sleep 0.05
 chmod +x hydramail.sh
 sleep 0.05
