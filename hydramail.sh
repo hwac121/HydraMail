@@ -59,7 +59,7 @@ credits(){
 
 options=("Set options" "Show options" "Attack target" "Credits" "Quit")
 
-PS3=':> '
+PS3=':--> '
 while [ "$menu" != 1 ]; do
 clear
 splash
